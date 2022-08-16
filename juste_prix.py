@@ -1,19 +1,19 @@
 import random
-import tkinter
 
 n = random.randint(1, 10)
+user_number = 0
 
+while user_number != n:
 
-def play():
     user_number = int(input("Choisis un nombre entre 1 et 10 : "))
+
     if user_number == n:
         print("Bravo, tu as gagnés le Juste Prix !")
-    elif user_number != n and user_number <= 10 and user_number >= 1:
-        print("Mince, tu dois retenter ta chance si tu veux gagner.")
-        play()
+    elif user_number < n and user_number >= 1:
+        print("C'est plus !")
+    elif user_number > n and user_number <= 10:
+        print("C'est moins !")
+    elif user_number > 10 or user_number < 1:
+        print("Attention,le nombre n'est pas dans l'encadrement, choisis en un autre.")
     else:
         print(">>ERROR")
-        play()
-
-
-play()
